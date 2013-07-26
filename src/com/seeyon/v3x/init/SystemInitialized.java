@@ -9,7 +9,6 @@ import com.seeyon.v3x.utils.Strings;
 public class SystemInitialized implements ServletContextListener {
 
 	public void contextDestroyed(ServletContextEvent arg0) {
-		// TODO Auto-generated method stub
 
 	}
 
