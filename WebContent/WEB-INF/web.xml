@@ -21,7 +21,8 @@
         <param-value>
             classpath*:conf/ApplicationContext.xml,
             classpath*:conf/common-controller.xml,
-            classpath*:conf/urlMapping.xml
+            classpath*:conf/urlMapping.xml,
+            classpath*:conf/hibernate.cfg.xml
         </param-value>
     </context-param> 
     
@@ -37,7 +38,7 @@
   		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>   
 	</listener> 
   
-  <!-- 应用系统的启动监听 -->
+ 
   	
 	<context-param>
 		<param-name>config.A8ApplicationRoot.key</param-name>
@@ -47,9 +48,16 @@
 		<param-name>ApplicationContextPath</param-name>
 		<param-value>/seeyon</param-value>
 	</context-param>
+	
+	 <!-- 应用系统的启动监听 -->
   	<listener>
     	<listener-class>com.seeyon.v3x.init.SystemInitialized</listener-class>
     </listener>
 
-  
+  	<jsp-config>
+  		<taglib>
+  			<taglib-location>/WEB-INF/tld/v3x.tld</taglib-location>
+  			<taglib-uri>http://v3x.seeyon.com/taglib/core</taglib-uri>
+  		</taglib>
+  	</jsp-config>
 </web-app>

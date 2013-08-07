@@ -4,7 +4,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import com.seeyon.v3x.common.Log4JConfigurator;
-import com.seeyon.v3x.utils.Strings;
 
 public class SystemInitialized implements ServletContextListener {
 
