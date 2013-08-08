@@ -1,10 +1,13 @@
 package com.cafuc.mvc.manager;
 
+import java.util.UUID;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.cafuc.mvc.domain.People;
+import com.seeyon.v3x.utils.UUIDLong;
 
 public class TestMain {
 	public static void main(String[] args) {
@@ -21,13 +24,13 @@ public class TestMain {
             //开启事务  
             session.beginTransaction();  
             People people = new People();  
+            people.setId(UUIDLong.getLong());
             people.setName("张三");  
             people.setPassword("123");  
             
               
             //保存对象  
             session.save(people);
-            System.out.println(":::::::");
               
             //提交事务  
             session.getTransaction().commit();  

@@ -5,9 +5,9 @@
 <hibernate-mapping>  
         <class name="com.cafuc.mvc.domain.People">  
             <id name="id">  
-                <generator class="uuid"/>  
+               <generator class="assigned" />
             </id>  
-            <property name="name" colum="name"/>  
-            <property name="password" colum="password"/>  
+            <property name="name" column="name"/>  
+            <property name="password" column="password"/>  
         </class>  
 </hibernate-mapping> 

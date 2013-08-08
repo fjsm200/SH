@@ -27,6 +27,9 @@
 	</form>
 	<h3>#######################################################</h3>
 	<v3x:showUserInfo user="${pageScope.userinfo }"/>
-	<h3>${user.name }</h3>
+	
+	<form method="post" action="system.do?method=testSave" >
+		<input type="submit" value="保存" />
+	</form>
 </body>
 </html>

@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC
-	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-<hibernate-configuration>  
-     
-    <session-factory>  
-     
-	    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>  
-	     
-	    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/v4</property>  
-	     
-	    <property name="hibernate.connection.username">root</property>  
-	     
-	    <property name="hibernate.connection.password">yyoa2</property>  
-	     
-	    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>  
-     
-     
-     	<mapping resource="com/cafuc/mvc/domain/People.hbm.xml"/> 
-    </session-factory>  
- </hibernate-configuration>  
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
+		<property name="url"><value>jdbc:mysql://localhost:3306/v4</value></property>
+		<property name="username"><value>root</value></property>
+		<property name="password"><value>yyoa2</value></property>
+	</bean>
+	
+	<bean id="sesionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource"> 
+			<ref local="dataSource" />
+		</property>
+		
+		<property name="mappingResources">
+			<list>
+				<value>com/cafuc/mvc/domain/People.hbm.xml</value>
+			</list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
