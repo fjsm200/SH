@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean name="paraMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName" value="method"/>
+		<property name="defaultMethodName" value="index"/>
+	</bean>
+	
+	<bean name="systemController" class="com.cafuc.mvc.controller.SystemController" >
+		<property name="peopleManagerImpl" ref="peopleManagerImpl"></property>
+		<property name="methodNameResolver">
+          <ref bean="paraMethodResolver"/>
+         </property>
+	</bean>
+	
+	<bean name="peopleManagerImpl" class="com.cafuc.mvc.manager.PeopleManagerImpl">
+		<property name="peopleDao" ref="peopleDao"></property>
+	</bean>	
+	
+	<bean name="peopleDao" class="com.cafuc.mvc.dao.PeopleDao"></bean>
+	
+	
+	
+	
+</beans>

@@ -8,8 +8,8 @@
 	<tlib-version>1.1</tlib-version>
 	<short-name>v3x</short-name>
 	<uri>http://v3x.seeyon.com/taglib/core</uri>
-	<display-name>V3X taglib core</display-name>
-	<description>Seeyon Taglib 1.0 Core Library</description>
+	<!-- <display-name>V3X taglib core</display-name>
+	<description>Seeyon Taglib 1.0 Core Library</description> -->
 	
 	<tag>
 	    <name>showUserInfo</name>

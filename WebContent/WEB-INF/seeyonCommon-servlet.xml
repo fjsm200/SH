@@ -2,7 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
 	<!-- Mutil action 方法解析器配置 -->
-	<bean name="methodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+	<bean name="paraMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
 		<property name="paramName" value="method"/>
 		<property name="defaultMethodName" value="index"/>
 	</bean>
@@ -17,5 +17,7 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
+	
+	
 
 </beans>
