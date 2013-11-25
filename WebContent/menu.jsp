@@ -9,72 +9,41 @@
 <script type="text/javascript" src="lib/ext4.1/locale/ext-lang-zh_CN.js"></script>
 
 <script type="text/javascript">
-
-Ext.onReady(function(){  
-    //工具条  
-    var toolbar = new Ext.Toolbar({  
-        renderTo:'toolbar',  
-        width:window.screen.width,  
-        height:50
-    });  
-    //文件菜单  
-    var fileMenu = new Ext.menu.Menu({  
-        //设置菜单四条边都有阴影  
-        shadow : 'frame',  
-        //添加菜单项  
-        items:[  
-            {  
-                text:'上传',  
-                handler:onMenuCheck  
-            },  
-            {  
-                text:'下载',  
-                handler:onMenuCheck  
-            }  
-        ]  
-    });  
-    //编辑菜单  
-    var editMenu = new Ext.menu.Menu({  
-        shadow : 'frame',  
-        items:[  
-            {  
-                text:'复制',  
-                handler:onMenuCheck  
-            },  
-            {  
-                text:'黏贴',  
-                handler:onMenuCheck  
-            },  
-            {  
-                text:'剪切',  
-                handler:onMenuCheck  
-            }  
-        ]  
-    });  
-    //添加菜单到工具条  
-    toolbar.add(  
-        {text:'文件',menu:fileMenu},  
-        {text:'编辑',menu:editMenu}  
-    );  
-    //菜单项被点击时候的回调函数  
-    function onMenuCheck(item){  
-        alert(item.text);
-        alert(window.screen.width);
-    }  
-}); 
+	Ext.onReady(function(){
+		var toolbar = new Ext.Toolbar({
+			renderTo:"toolbar",
+			width   :window.screen.width,
+			height  :30
+		});
+		
+		var fileMenu = new Ext.menu.Menu({
+			shadow 	:"frame",
+			items	:[
+			     	  {
+			     		text:"文件上传",
+			     	   	handler:onMenuClick1
+			     	   },
+			     	  {
+			     		text:"文件下载",
+			     		handler:onMenuClick2
+			     	   }
+			     	   ]
+		});
+		
+		toolbar.add({text:"文件功能",menu:fileMenu});
+		function onMenuClick1(item){
+			alert(item.text);
+			document.location.href="system.do?method=showFileUpAndDown";
+		};
+		function onMenuClick2(item){
+			document.location.href="system.do?method=showChangeWord";
+		}
+	});
+	
 </script>
 <title>菜单栏</title>
 </head>
 <body>
 	<div id = "toolbar"></div>
-	<!-- <div id="content"></div>
-	<form id="form1" method="post" action="system.do?method=showFileUpAndDown">
-		<input id="F1" type="submit" value="文件上传下载功能" />
-	</form>
-	
-	<form id="fohrm2" method="post" action="system.do?method=showChangeWord" >
-		<input type="submit" value="转化worl功能" />
-	</form> -->
-	
 </body>
 </html>
