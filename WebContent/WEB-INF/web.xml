@@ -65,4 +65,18 @@
   			<taglib-location>/WEB-INF/tld/v3x.tld</taglib-location>
   		</taglib>
   	</jsp-config>
+  	
+  	<!-- 自定义过滤器 -->
+  	<filter>
+  		<filter-name>rightFilter</filter-name>
+  		<filter-class>com.filter.RightFilter</filter-class>
+  		<init-param>
+  			<param-name>ignore</param-name>
+  			<param-value>false</param-value>
+  		</init-param>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>rightFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
 </web-app>
