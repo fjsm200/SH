@@ -1,32 +1,23 @@
 package com.cafuc.mvc.controller;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.util.Iterator;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 import com.cafuc.mvc.domain.People;
-import com.cafuc.mvc.manager.PeopleManagerImpl;
-
+import com.cafuc.mvc.manager.PeopleManager;
+@Component
 public class SystemController extends MultiActionController{
 	private static final Log log = LogFactory.getLog(SystemController.class);
-	private PeopleManagerImpl peopleManagerImpl;
+	@Autowired
+	public PeopleManager peopleManager;
 
-	public void setPeopleManagerImpl(PeopleManagerImpl peopleManagerImpl) {
-		this.peopleManagerImpl = peopleManagerImpl;
-	}
 
 	public ModelAndView index(HttpServletRequest request,HttpServletResponse response) throws Exception {
 		ModelAndView modelAndView = new ModelAndView("first");
@@ -43,7 +34,7 @@ public class SystemController extends MultiActionController{
          //people.setId(UUIDLong.getLong());
          people.setName("张四");  
          people.setPassword("1234");
-         peopleManagerImpl.savePeople(people);
+         peopleManager.savePeople(people);
          log.info("保存成功");
          return modelAndView;
 	}
