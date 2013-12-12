@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- property文件的配置 -->
+	<bean name="myPropertyPlaceholderConfigurer" class="com.base.MyPropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath*:conf/cafuc.properties</value>
+		</property>
+	</bean>
+	
+</beans>
