@@ -3,6 +3,9 @@ package com.seeyon.v3x.init;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
+
+import com.base.ApplicationBeanHolder;
 import com.seeyon.v3x.common.Log4JConfigurator;
 
 public class SystemInitialized implements ServletContextListener {
@@ -23,6 +26,7 @@ public class SystemInitialized implements ServletContextListener {
 		Log4JConfigurator.initialized();
 		System.out.println("SystemInitialized---over....");
 		
+	
 	}
 
 }

@@ -33,7 +33,7 @@
 		toolbar.add({text:"文件功能",menu:fileMenu});
 		function onMenuClick1(item){
 			alert(item.text);
-			document.location.href="system.do?method=showFileUpAndDown";
+			document.location.href="system.do?method=showFileUpAndDown&pv=22";
 		};
 		function onMenuClick2(item){
 			document.location.href="system.do?method=showChangeWord";
