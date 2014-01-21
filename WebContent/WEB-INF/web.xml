@@ -16,15 +16,13 @@
   
     <servlet>
         <servlet-name>seeyonCommon</servlet-name>
-        "WebContent/WEB-INF/web.xml"<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
         <load-on-startup>1</load-on-startup>
     </servlet>
     
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            <!-- classpath*:conf/common-dao.xml,
-            classpath*:conf/common-manager.xml, -->
             classpath*:conf/applicationContext.xml,
             classpath*:conf/spring-config.xml,
             classpath*:conf/urlMapping.xml,

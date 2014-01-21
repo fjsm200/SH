@@ -8,13 +8,13 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
+import com.base.BaseController;
 import com.base.ConfigProperty;
 import com.cafuc.mvc.domain.People;
 import com.cafuc.mvc.manager.PeopleManager;
 @Component
-public class SystemController extends MultiActionController{
+public class SystemController extends BaseController{
 	private static final Log log = LogFactory.getLog(SystemController.class);
 	@Autowired
 	public PeopleManager peopleManager;
@@ -50,6 +50,7 @@ public class SystemController extends MultiActionController{
 	public ModelAndView showFileUpAndDown(HttpServletRequest arg0,HttpServletResponse arg1) throws Exception {
 		ModelAndView mav = new ModelAndView("fileoper/showFileUpAndDown");
 		System.out.println("读取配置文件username="+ConfigProperty.getPropertyValue("username"));
+		mav.addObject("result", "TO");
 		return mav;
 	
 	}

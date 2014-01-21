@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-	<!-- Mutil action 方法解析器配置 -->
-	<bean name="paraMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
-		<property name="paramName" value="method"/>
-		<property name="defaultMethodName" value="index"/>
-	</bean>
 	
-	<!-- 配置viewResolver解析器 -->
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		
-		<property name="prefix"> 
-			<value>/WEB-INF/jsp/</value>
-		</property>
-		<property name="suffix"> 
-			<value>.jsp</value>
-		</property>
-	</bean>
+	
 	
 	
 
